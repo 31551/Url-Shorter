@@ -1,12 +1,12 @@
 // 项目名，决定html从哪个项目获取，
 const github_repo = typeof(GITHUB_REPO)!="undefined" ? GITHUB_REPO
-    : 'AoEiuV020/Url-Shorten-Worker'
+    : '31551/Url-Shorter'
 // 项目版本，cdn会有缓存，所以有更新时需要指定版本，
 const github_version = typeof(GITHUB_VERSION)!="undefined" ? GITHUB_VERSION
     : '@main'
 // 密码，密码正确情况无视白名单和超时设置，且支持自定义短链接，
 const password = typeof(PASSWORD)!="undefined" ? PASSWORD
-    : 'AoEiuV020 yes'
+    : 'Jollystar yes'
 // 短链超时，单位毫秒，支持整数乘法，0表示不设置超时，
 const shorten_timeout = typeof(SHORTEN_TIMEOUT)!="undefined" ? SHORTEN_TIMEOUT.split("*").reduce((a,b)=>parseInt(a)*parseInt(b),1)
     : (1000 * 60 * 10)
@@ -14,18 +14,16 @@ const shorten_timeout = typeof(SHORTEN_TIMEOUT)!="undefined" ? SHORTEN_TIMEOUT.s
 const default_len = typeof(DEFAULT_LEN)!="undefined" ? parseInt(DEFAULT_LEN)
     : 6
 // 为true开启演示，否则无密码且非白名单请求不受理，是则允许访客试用，超时后失效，
-const demo_mode = typeof(DEMO_MODE)!="undefined" ? DEMO_MODE === 'true'
-    : true
+const demo_mode = typeof(DEMO_MODE)!="undefined" ? DEMO_MODE === 'false'
+    : false
 // 为true自动删除超时的演示短链接记录，否则仅是标记过期，以便在后台查询历史记录，
 const remove_completely = typeof(REMOVE_COMPLETELY)!="undefined" ? REMOVE_COMPLETELY === 'true'
     : true
 // 白名单中的域名无视超时，json数组格式，写顶级域名就可以，自动通过顶级域名和所有二级域名，
 const white_list = JSON.parse(typeof(WHITE_LIST)!="undefined" ? WHITE_LIST
     : `[
-"aoeiuv020.com",
-"aoeiuv020.cn",
-"aoeiuv020.cc",
-"020.name"
+"jollystar.com",
+"jollystar.cn"
     ]`)
 // 演示模式开启时网页上展示这段禁止滥用提示，并不需要明确表示什么时候失效，
 const demo_notice = typeof(DEMO_NOTICE)!="undefined" ? DEMO_NOTICE
