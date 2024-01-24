@@ -27,7 +27,7 @@ const white_list = JSON.parse(typeof(WHITE_LIST)!="undefined" ? WHITE_LIST
     ]`)
 // 演示模式开启时网页上展示这段禁止滥用提示，并不需要明确表示什么时候失效，
 const demo_notice = typeof(DEMO_NOTICE)!="undefined" ? DEMO_NOTICE
-    : `注意：为防止示例服务被人滥用，故所有由demo网站生成的链接随时可能失效，如需长期使用请自行搭建。`
+    : `注意：这是ZHUORUI/卓瑞斯的短链平台，如需使用请自行搭建。`
 //console.log(`${github_repo}, ${github_version}, ${password}, ${shorten_timeout}, ${demo_mode}, ${white_list}, ${demo_notice}`)
 const html404 = `<!DOCTYPE html>
 <body>
